@@ -1,0 +1,1024 @@
+:root {
+    --primary: #f6f7dd;
+    --bg:#decfac;
+    --second:#a67c5b;
+    --gelap: #b5926d;
+}
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Friz Quadrata';
+   src: url('/fontfriz.woff');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Friz Quadrata', sans-serif;
+    background-color: var(--gelap);
+    color: #fff;
+    min-height: 3000px;
+    margin: 0;
+    
+}
+
+/* navbar */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 5%;
+    background-color: rgba(1, 1, 1, 0.8);
+    border-bottom: 1px solid var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: red;
+    font-style: italic;
+}
+.navbar .navbar-logo span {
+    color: white;
+}
+
+.navbar .navbar-nav a {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+}
+
+
+
+.navbar .navbar-nav a:hover {
+    color: var(--second);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--second);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a{
+    color: #fff;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--second);
+}
+
+
+#hamburger-menu {
+    display: none;
+}
+
+/* search start */
+
+.navbar .search-form {
+    position: absolute;
+    top: 100%;
+    right: 7%;
+    background-color: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.3s;
+}
+
+.navbar .search-form.active {
+    transform: scaleY(1);
+}
+
+.navbar .search-form input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: #000000;
+    padding: 1.2rem;
+}
+
+.navbar .search-form label {
+    cursor: pointer;
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    color: black;
+}
+
+/* hero section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../praktek.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 1);
+}
+
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(0deg, rgba(1,1,3,0) 8%, rgba(255, 255, 255, 0 ) 50% );
+}
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+p{
+    text-indent: 30px;
+}
+
+.hero .content p {
+    min-height: 150px;
+    max-width: 1000px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 2rem;
+    margin: 1 1rem;
+    padding: 1px 30px;
+    display: flex;
+    flex-direction: 0.5rem;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;
+    text-indent: 30px ;
+    gap: 0.5rem;
+    color: white;
+}
+
+.hero .content .cta {
+    margin-top: 1rem 7%;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: var(--second);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* about section */
+.about{
+    background-image: 
+    linear-gradient(45deg, transparent 45%, rgba(0, 0, 0, 0.1) 45%, rgba(0, 0, 0, 0.1) 55%, transparent 55%),
+    linear-gradient(-45deg, transparent 45%, rgba(0, 0, 0, 0.1) 45%, rgba(0, 0, 0, 0.1) 55%, transparent 55%);
+    background-size: 20px 20px; 
+}
+.about, 
+.menu,
+.aktivitas,
+.bungkusv,
+.kelompok,
+.contact {
+    padding: 8rem 7% 1.4rem;
+}
+
+.about h2,
+.menu h2,
+.aktivitas h2,
+.bungkusv h2,
+.contact h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem ;
+}
+
+.about h2 span, .produk h2 span {
+    color: black;
+}
+
+
+.about-img  {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 100px;     
+    margin-bottom: 2rem;
+    margin-top: 5rem;    
+}
+
+/* img {
+    max-width: 400px;
+} */
+
+/* .about .row .about-img img {
+    margin-top:5%;
+    width: 50%;
+    height: 75%;
+    border-radius: 8%;
+} */
+
+.about .row .content {
+    flex: 1 1 15rem;
+    /* margin-left: 3rem; */
+    padding: 0 0.5rem;
+}
+
+/* .about .row .content h3 {
+    font-size: 2rem;
+    margin-left: -5;
+    margin-bottom: 0.5rem;
+} */
+
+.about .row .content p {
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+    color: black;
+    font-size: 1.3rem;
+    text-align: justify;
+    font-weight: 10;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+/* produk section */
+
+.menu {
+    background-image: url(/bg2.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+}
+.menu h2 {
+    margin-bottom: 1.7rem;
+}
+.menu p {
+    text-align: center;
+    color: black;
+    max-width: 30rem;
+    margin: auto;
+    /* font-weight: 100; */
+}
+
+.menu .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.menu .row .menu-card {
+    text-align: center;
+}
+
+.menu-card-img1{
+    width: 300px;
+    height: 300px;
+    margin-top: 5rem ;
+}
+.menu-card-img2{
+    width: 300px;
+    height: 300px;
+    margin-top: 3rem ;
+}
+.menu-card-img3{
+    width: 300px;
+    height: 300px;
+    margin-top: 1rem ;
+}
+
+.menu .row .menu-card img {
+    border-radius: 50%;
+}
+
+.menu .row .menu-card .menu-card-title {
+    margin-top: 1.5rem auto 0.5rem;
+}
+
+/* Aktivitas Start */
+
+.aktivitas h2 {
+    margin-bottom: 0.1rem;
+}
+
+.aktivitas {
+    /* background-image: url(/bg3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-position: center ; */
+    background: linear-gradient(135deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 1);
+}
+
+
+.container {
+    padding: 80px 0 0 0;
+}
+
+.konten-slide {
+    max-width: 4000px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.imgslide {
+    display: block;
+}
+
+.gambar {
+    vertical-align: middle;
+    border-radius: 5%;
+    width: 100%;
+    height: 400px;
+    margin-bottom: -50px;
+    filter: brightness(60%);
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position:absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: rgb(255, 254, 224);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 3px ;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.next{
+    right: 10rem;
+    border-radius: 3px ;
+}
+
+.prev {
+    left: 10rem;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(255, 255, 255, 0.8 );
+    color: rgb(0, 0, 0)
+}
+
+.text {
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    padding: 0 ;
+    position: relative;
+    align-items: center;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    -webkit-text-stroke: .5px rgb(255, 255, 255); 
+}
+
+
+.konten-slide .numberslide {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4;
+    }
+
+    to {
+       opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.container .page {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.page .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 20px 10px 50px;
+    background-color: black;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    border-radius: 50%;
+}
+
+.page .aktif,
+.page .dot:hover {
+    background-color: red;
+}
+
+.pameran {
+    display: block;
+    padding: 15px 0 15px 0;
+    align-items: center;
+    justify-content: center;
+}
+.pameran h1 {
+    display: inline-block;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 5px;
+    position: relative;
+}
+.pmrn {
+    width: 400px;
+    padding: 15px 0 15px 0;
+    border-radius: 5%;
+}
+/* Aktivitas Video */
+
+.bungkusv {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 1);
+    height: 130vh;
+    width: 100vw;
+}
+
+.bungkusv h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bungkus {
+    width: 80%;
+    height: 100vh;
+    margin-top: -10rem;
+    left: 120px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sliderv{
+    display: flex;
+    margin-top: 190px;
+}
+
+.bungkus .sliderv {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bungkus ul {
+    position: absolute;
+    bottom: 10px;
+    transform: translateX(-10%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    left: 200px ;
+}
+
+.bungkus ul li {
+    list-style: none;
+    cursor: pointer;
+    margin: 10px ;
+}
+
+.bungkus ul li video {
+    display: flex;
+    width: 200px;
+    transition: all 0.3s;
+}
+
+.bungkus ul li video:hover {
+    transform: scale(1.1);
+}
+
+.video {
+    width: 120px;
+    height: 120px;
+}
+/* Profil Team start */
+
+
+.cntr h1 {
+    margin-top: 1px;
+}
+
+.kelompok a {
+    color: #333333;
+    font-weight: 400;
+    outline: none;
+    text-decoration: none;
+    transition: 0.5s;
+
+}
+
+.kelompok a:hover,
+.kelompok a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.kelompok p{
+    padding: 0;
+    margin: 0 0 0 15px 0;
+    color: #454545;
+    font-weight: 300;
+}
+h1,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 15px 0 15px 0;
+    color: #333333;
+    font-weight: 700;
+}
+
+.doseng {
+    width: 100%;
+    height: auto;
+}
+
+.cntr {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.section-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 80px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.section-title1 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 80px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.section-title h1 {
+    display: inline-block;
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 5px;
+    position: relative;
+}
+
+.section-title h1::before {
+    content: '';
+    left: 0;
+    position: absolute;
+    height: 3px;
+    right: 32%;
+    background-color: white;
+    bottom: -5px;
+}
+
+.cntr .section-title h1::before {
+    left: 30%;
+}
+
+.rowi {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.column {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.team {
+    margin-bottom: 30px;
+}
+
+.team .team-img {
+    position: relative;
+    font-size: 0;
+    text-align: center;
+}
+
+.team .team-img .doseng {
+    width: 160px;
+    height: auto;
+    border-radius: 100%;
+    border: 20px solid #f3f4fa;
+}
+
+.team .team-content {
+    padding: 80px 20px 20px 20px;
+    margin-top: -80px;
+    text-align: center;
+    background: #f3f4fa;
+    border-radius: 10px;
+}
+
+.team .team-content h2 {
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #333333; 
+}
+.team .team-content h3 {
+    font-size: 16px;
+    font-weight: 300;
+}
+.team .team-content h4 {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.team .team-social {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 35px;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.6 );
+    transition: all .3s;
+    font-size: 0;
+    z-index: 1;
+    opacity: 0;
+}
+
+.team:hover .team-social {
+    opacity: 1;
+}
+
+.team .team-social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    padding: 11px 0 10px 0;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 16px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10px;
+    transition: all .3s;
+    margin-top: 50px;
+
+}
+
+
+.team .team-social a .fa-whatsapp {
+    background:green;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    text-align: center;
+}
+
+.team .team-social a:last-child {
+    margin-right: 0;
+}
+
+.team:hover .team-social a {
+    margin-top: 0;
+}
+
+.pengembang .contentp .ctap {
+    width: 300px;
+}
+
+.pengembang .contentp .ctap {
+    margin-top: 1rem 7%;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5rem ;
+    font-size: 1.5rem;
+    text-align:center;
+    color: #fff;
+    background-color: var(--second);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* contact */
+
+.contact{
+    background-color: var(--second);
+    font-family: 'Friz Quadrata';
+    src: url('/fontfriz.woff');
+}
+.contact h2{
+    margin-bottom: 3rem;
+    color: white;
+}
+placeholder{
+    color: white;
+}
+.contact form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem auto;
+    text-align: center;
+}
+
+.input-group {
+    color: white;
+}
+.contact form .input-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contact form .input-box input,
+.contact form textarea{
+    width: 100%;
+    padding: 2.5rem;
+    font-size: 1.8 rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border-radius: 2rem;
+    border: 2px solid white;
+    margin: 1.5rem 0;
+    resize: none;
+}
+.contact form .btn{
+    margin-top: 2rem;
+    background-color: #fff;
+    width: 100px;
+    height: 50px;
+    border-radius: 10%;
+}
+
+/* footer */
+
+footer {
+    background-color: var(--second);
+    text-align: center;
+    padding: 1rem 0 3rem;
+    margin-top: 3rem;
+}
+
+footer .sosial .fa-tiktok  {
+    padding: 1rem 0;
+}
+
+footer .linkk {
+    margin-bottom: 1.6rem;
+}
+
+.fa-tiktok {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+}
+footer .sosial  a {
+    color: white;
+    margin: 1rem;
+}
+
+footer .sosial a:hover,
+footer .linkk a:hover {
+    color: black;
+}
+
+footer .linkk a{
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+}
+
+footer .credit {
+    font-size: 1rem;
+}
+
+footer .credit a {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Media Queries */
+
+/* laptop */
+@media (max-width: 1480px) {
+    html {
+        font-size: 70%;
+    }
+}
+
+/* tablet */
+@media (max-width: 858px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu{
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: black;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0;
+    }
+
+    .navbar .navbar-nav a:hover::after {
+        transform: scaleX(0.3)
+    }
+
+
+    .navbar .search-form {
+        width: 90%;
+        right: 2rem;
+    }
+.about .row {
+    flex-wrap: wrap;
+
+}
+.aktivitas {
+    flex-wrap: wrap;
+}
+
+.about .row .content p {
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+    color: black;
+    font-size: 1.3rem;
+    text-align: justify;
+    margin-left: 0rem;
+    margin-right: 0rem;
+}
+/* .about,
+.menu{
+    background-image: none;
+} */
+
+img {
+    max-width: 400px;
+}
+.konten-slide {
+    max-width: 4000px;
+    position: relative;
+    margin: auto;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+}
+
+.bungkus ul li video {
+    width: 100px;
+    transition: all 0.3s;
+}
+
+.bungkus {
+    width: 80%;
+    height: 100vh;
+    margin-top: -30rem;
+    left: 45px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bungkus ul {
+    position: absolute;
+    bottom: -30px;
+    transform: translateX(-10%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    left: 15px;
+}
+
+footer .linkk a{
+    color: #fff;
+    padding: 0.2rem 1rem;
+    font-size: 1rem;
+}
+
+
+}
+
+/* mobile phone */
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+    .slide h3 {
+        font-size: 1.5rem;
+    }
+}
