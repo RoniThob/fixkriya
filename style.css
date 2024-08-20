@@ -19,7 +19,7 @@
 
 @font-face {
     font-family: 'Friz Quadrata';
-   src: url('/fontfriz.woff');
+   src: url('fontfriz.woff');
 }
 
 html {
@@ -141,7 +141,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../praktek.jpg');
+    background-image: url('praktek.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
